@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <h1>Add Item</h1>
+
+
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        {{ form_row(form.description,  {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_row(form.price_per_unit,  {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.amount,  {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <input type="submit" class="btn btn-primary">
+
+    {{ form_end(form) }}
+
+{% endblock %}

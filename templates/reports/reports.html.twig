@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <h1>Reports</h1>
+
+    <div class="d-flex">
+        <div class="card">
+            <div class="card-header">
+                Customers Count
+            </div>
+            <div class="card-body">
+                <h2 class="text-center">
+                    {{ customers }}
+                </h2>
+            </div>
+        </div>
+
+        <div class="card ml-1 mr-1">
+            <div class="card-header">
+                Assigned Cards Count
+            </div>
+            <div class="card-body">
+                <h2 class="text-center">
+                    {{ cards }}
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-wrapper mt-3">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Money spent</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>
+                            {{ loop.index }}
+                        </td>
+                        <td>{{ order.firstname }} {{ order.lastname }}</td>
+                        <td>{{ order.final_price }} Kč</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

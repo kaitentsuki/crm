@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+    <h1>Search</h1>
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        {{ form_row(form.search_by,  {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(form.search_input,  {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+
+    <input type="submit" class="btn btn-primary" value="Search">
+
+    {{ form_end(form) }}
+
+
+    {% if results %}
+        <table class="table mt-5">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Card</th>
+            </tr>
+            </thead>
+           {% for result in results %}
+                <tr>
+                    <td>
+                        {{ result.getFirstname() }}
+                    </td>
+                    <td>
+                        {{ result.getLastname() }}
+                    </td>
+                    <td>
+                        {{ result.getAddress() }}
+                    </td>
+                    <td>
+                        {{ result.getEmail() }}
+                    </td>
+                    <td>
+                        {{ result.getPhone() }}
+                    </td>
+                    <td>
+                        {{ result.getLoyaltyCard().getNumber() }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

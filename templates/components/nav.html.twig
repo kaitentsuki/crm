@@ -1,0 +1,41 @@
+{% block nav %}
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path("dashboard") }}">
+                <span data-feather="home"></span>
+                Dashboard <span class="sr-only">(current)</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path("customer_registration") }}">
+                <span data-feather="file"></span>
+                Customer Registration
+            </a>
+        </li>
+{#        <li class="nav-item">
+            <a class="nav-link" href="{{ path("add_item") }}">
+                <span data-feather="shopping-cart"></span>
+                Add Product
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path("order_create") }}">
+                <span data-feather="users"></span>
+                Create Order
+            </a>
+        </li>#}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path("reports") }}">
+                <span data-feather="bar-chart-2"></span>
+                Reports
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path("search") }}">
+                <span data-feather="bar-chart-2"></span>
+                Search
+            </a>
+        </li>
+    </ul>
+{% endblock %}
