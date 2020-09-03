@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\OrderRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
@@ -36,14 +35,13 @@ class Order
     private $final_price;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="datetime")
      */
     private $date_created;
 
     public function __construct()
     {
-        date_default_timezone_set('Europe/Prague');
-        $this->date_created = date("Y-m-d H:i:s");
+        $this->date_created = new \DateTime();
     }
 
 
